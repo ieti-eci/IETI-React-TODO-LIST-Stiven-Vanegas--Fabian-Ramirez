@@ -43,6 +43,13 @@ function App() {
     const value = event.target.value;
     setTextValue(value);
   };
+
+  const handleTaskDelete = (index) => () => {
+    console.log("deleted:"+index);
+    const arr = [...tasks];
+    arr.splice(index,1);
+    setTasks(arr);
+  };
   return (
     <main className="App-main">
       <form onSubmit={handleSubmit}>
@@ -56,6 +63,7 @@ function App() {
               isChecked={task.isCompleted}
               taskName={task.name}
               onTaskChange={handleTaskChange(index)}
+              onDelete={handleTaskDelete(index)}
             />
           );
         })}
