@@ -1,0 +1,45 @@
+.App-main {
+    margin: auto;
+    min-height: 100vh;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: calc(10px + 2vmin);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgb(197, 211, 211);
+    border-radius: 15px;
+}
+
+li:hover {
+    background-color: rgb(153, 167, 167);
+}
+
+.input-cb {
+    margin: 0;
+}
+
+.li-span {
+    margin-left: 5px;
+}
+
+button {
+    margin-left: 5px;
+}
+
+form {
+    width: 100%;
+    text-align: center;
+}
