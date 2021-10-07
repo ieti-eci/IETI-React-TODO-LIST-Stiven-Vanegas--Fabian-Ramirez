@@ -16,16 +16,37 @@ function App() {
       name: "Deploy App"
     }
   ]);
+  
+  const [textValue, setTextValue] = useState("");
+  
   const handleTaskChange = (index) => () => {
     console.log("changed:" + index);
     const arr = [...tasks];
     arr[index].isCompleted = !arr[index].isCompleted;
     setTasks(arr);
   };
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if(textValue !== ""){
+      const newTask = {
+        isCompleted:false,
+        name:textValue
+      };
+      const arr = [...tasks];
+      arr.push(newTask);
+      setTasks(arr);
+    }
+  };
+
+  const handleTextChange = (event) => {
+    const value = event.target.value;
+    setTextValue(value);
+  };
   return (
     <main className="App-main">
-      <form>
-        <input type="text" placeholder="Task name" />
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="Task name" value={textValue} onChange={handleTextChange}/>
         <button>Create Task</button>
       </form>
       <ul>
